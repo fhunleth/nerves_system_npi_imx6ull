@@ -1,0 +1,5 @@
+config BR2_PACKAGE_EBF_LINUX_DTOVERLAYS
+	bool "ebf-linux-dtoverlays"
+	select BR2_PACKAGE_HOST_DTC
+	help
+	  Device Tree Overlays for i.MX6ull Pro
