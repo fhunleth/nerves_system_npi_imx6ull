@@ -18,11 +18,11 @@ i.MX6ULL](https://www.digikey.com/product-detail/en/seeed-technology-co-ltd/1029
 | Memory               | 512 MB DRAM                     |
 | Storage              | 8 GB eMMC Flash and MicroSD     |
 | Linux kernel         | 4.19 w/ RCN patches             |
-| IEx terminal         | UART `ttyS0`                    |
+| IEx terminal         | UART `ttymxc0`                  |
 | GPIO, I2C, SPI       | Yes - [Elixir Circuits](https://github.com/elixir-circuits) |
 | ADC                  | Yes                             |
 | PWM                  | Yes, but no Elixir support      |
-| UART                 | ttyS0 + more via device tree overlay |
+| UART                 | ttymxc0                         |
 | Camera               | None                            |
 | Ethernet             | Yes                             |
 | WiFi                 | Other requires USB WiFi dongle/driver |
