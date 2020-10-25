@@ -1,7 +1,6 @@
 # NPi i.MX6ULL Support
 
-*This is a work in progress. DO NOT USE UNLESS YOU'RE HELPING ME OUT OR YOU'LL
-BE QUITE FRUSTRATED*
+*This is a work in progress. It currently only works on MicroSD*
 
 [![CircleCI](https://circleci.com/gh/nerves-project/nerves_system_npi_imx6ull.svg?style=svg)](https://circleci.com/gh/nerves-project/nerves_system_npi_imx6ull)
 [![Hex version](https://img.shields.io/hexpm/v/nerves_system_npi_imx6ull.svg "Hex version")](https://hex.pm/packages/nerves_system_npi_imx6ull)
