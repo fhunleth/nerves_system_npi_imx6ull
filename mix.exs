@@ -1,7 +1,7 @@
 defmodule NervesSystemNPiIMX6ULL.MixProject do
   use Mix.Project
 
-  @github_organization "nerves-project"
+  @github_organization "fhunleth"
   @app :nerves_system_npi_imx6ull
   @version Path.join(__DIR__, "VERSION")
            |> File.read!()
