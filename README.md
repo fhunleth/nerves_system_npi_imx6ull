@@ -2,7 +2,7 @@
 
 *This is a work in progress. It currently only works on MicroSD*
 
-[![CircleCI](https://circleci.com/gh/nerves-project/nerves_system_npi_imx6ull.svg?style=svg)](https://circleci.com/gh/nerves-project/nerves_system_npi_imx6ull)
+[![CircleCI](https://circleci.com/gh/fhunleth/nerves_system_npi_imx6ull.svg?style=svg)](https://circleci.com/gh/fhunleth/nerves_system_npi_imx6ull)
 [![Hex version](https://img.shields.io/hexpm/v/nerves_system_npi_imx6ull.svg "Hex version")](https://hex.pm/packages/nerves_system_npi_imx6ull)
 
 This is the base Nerves System configuration for the [NPi
