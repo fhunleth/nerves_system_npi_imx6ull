@@ -19,6 +19,7 @@ i.MX6ULL](https://www.digikey.com/product-detail/en/seeed-technology-co-ltd/1029
 | Linux kernel         | 4.19 w/ RCN patches             |
 | IEx terminal         | UART `ttymxc0`                  |
 | GPIO, I2C, SPI       | Yes - [Elixir Circuits](https://github.com/elixir-circuits) |
+| Display              | Yes, but not supported yet      |
 | ADC                  | Yes                             |
 | PWM                  | Yes, but no Elixir support      |
 | UART                 | ttymxc0                         |
@@ -32,8 +33,16 @@ WARNING: 32 GB and larger MicroSD cards don't seem to work!
 
 ## Using
 
+This port currently only runs off a MicroSD card. It has not been updated to
+support eMMC usage. If you're interested, please see
+[#1](https://github.com/fhunleth/nerves_system_npi_imx6ull/issues/1). Because of
+this, you'll need to modify the boot select switches to `SD` boot (It's
+`01001001`, but see legend on PCB)
+
 The most common way of using this Nerves System is create a project with `mix
-nerves.new` and to export `MIX_TARGET=npi_imx6ull`. See the [Getting started
+nerves.new` and add `npi_imx6ull` references where needed and in a similar way
+to the default systems like `bbb`, etc. Then export `MIX_TARGET=npi_imx6ull`.
+See the [Getting started
 guide](https://hexdocs.pm/nerves/getting-started.html#creating-a-new-nerves-app)
 for more information.
 
@@ -43,62 +52,36 @@ systems](https://hexdocs.pm/nerves/systems.html#customizing-your-own-nerves-syst
 
 ## Console access
 
-TBD
+The console is configured to output to the 4-pin white header near the power
+connectors. A 3.3V FTDI cable is needed to access the output.
 
-The console is configured to output to the 6 pin header on the
-BeagleBone that's labeled J1. A 3.3V FTDI cable is needed to access the output.
+In theory, the console could be routed to the display. The display hasn't been
+enabled. See
+[#2](https://github.com/fhunleth/nerves_system_npi_imx6ull/issues/2).
 
-The HDMI output has been disabled via device tree to free up pins on the GPIO
-header. If you would like console access via HDMI, you will need to enable HDMI
-support in the Linux kernel, remove the HDMI disable argument in the uboot
-script providing kernel arguments, and change `erlinit.conf` to output to
-`tty1`.
+If you would like console access via the LCD, you will need to enable LCD
+support in the Linux kernel, and change `erlinit.conf` to output to `tty1`.
 
-## Provisioning devices
+## Networking
 
-This system supports storing provisioning information in a small key-value store
-outside of any filesystem. Provisioning is an optional step and reasonable
-defaults are provided if this is missing.
-
-Provisioning information can be queried using the Nerves.Runtime KV store's
-[`Nerves.Runtime.KV.get/1`](https://hexdocs.pm/nerves_runtime/Nerves.Runtime.KV.html#get/1)
-function.
-
-Keys used by this system are:
-
-Key                    | Example Value     | Description
-:--------------------- | :---------------- | :----------
-`nerves_serial_number` | `"12345678"`       | By default, this string is used to create unique hostnames and Erlang node names. If unset, it defaults to part of the BBB's serial number.
-
-The normal procedure would be to set these keys once in manufacturing or before
-deployment and then leave them alone.
-
-For example, to provision a serial number on a running device, run the following
-and reboot:
+The board has two 100 Mbps Ethernet interfaces. Here's an example `:vintage_net`
+configuration that enables both of them:
 
 ```elixir
-iex> cmd("fw_setenv nerves_serial_number 12345678")
+config :vintage_net,
+  config: [
+    {"eth0",
+     %{
+       type: VintageNetEthernet,
+       ipv4: %{method: :dhcp}
+     }},
+    {"eth1",
+     %{
+       type: VintageNetEthernet,
+       ipv4: %{method: :dhcp}
+     }}
+  ]
 ```
-
-This system supports setting the serial number offline. To do this, set the
-`NERVES_SERIAL_NUMBER` environment variable when burning the firmware. If you're
-programming MicroSD cards using `fwup`, the commandline is:
-
-```sh
-sudo NERVES_SERIAL_NUMBER=12345678 fwup path_to_firmware.fw
-```
-
-Serial numbers are stored on the MicroSD card so if the MicroSD card is
-replaced, the serial number will need to be reprogrammed. The numbers are stored
-in a U-boot environment block. This is a special region that is separate from
-the application partition so reformatting the application partition will not
-lose the serial number or any other data stored in this block.
-
-Additional key value pairs can be provisioned by overriding the default
-provisioning.conf file location by setting the environment variable
-`NERVES_PROVISIONING=/path/to/provisioning.conf`. The default provisioning.conf
-will set the `nerves_serial_number`, if you override the location to this file,
-you will be responsible for setting this yourself.
 
 ## Linux and U-Boot versions
 
