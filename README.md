@@ -1,6 +1,6 @@
 # NPi i.MX6ULL Support
 
-*This is a work in progress. It currently only works on MicroSD*
+*This is a work in progress. It currently boots off MicroSD cards and not eMMC*
 
 [![CircleCI](https://circleci.com/gh/fhunleth/nerves_system_npi_imx6ull.svg?style=svg)](https://circleci.com/gh/fhunleth/nerves_system_npi_imx6ull)
 [![Hex version](https://img.shields.io/hexpm/v/nerves_system_npi_imx6ull.svg "Hex version")](https://hex.pm/packages/nerves_system_npi_imx6ull)
