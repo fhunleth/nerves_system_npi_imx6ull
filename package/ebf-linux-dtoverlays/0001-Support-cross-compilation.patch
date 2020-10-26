@@ -1,0 +1,25 @@
+From f56e0465217aaf99b5d521ba02f9fe4e5788daf5 Mon Sep 17 00:00:00 2001
+From: Frank Hunleth <fhunleth@troodon-software.com>
+Date: Mon, 26 Oct 2020 11:39:04 -0400
+Subject: [PATCH] Support cross-compilation
+
+---
+ Makefile | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/Makefile b/Makefile
+index f8f965a..bef96ff 100644
+--- a/Makefile
++++ b/Makefile
+@@ -128,7 +128,7 @@ export quiet Q KBUILD_VERBOSE
+ 
+ all_%:
+ 	$(Q)$(MAKE) PLATFORM=$* all_arch
+-	gcc -o config-pin ./tools/pmunts_muntsos/config-pin.c
++	$(CC) -o config-pin ./tools/pmunts_muntsos/config-pin.c
+ 
+ clean_%:
+ 	$(Q)$(MAKE) PLATFORM=$* clean_arch
+-- 
+2.25.1
+
