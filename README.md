@@ -23,8 +23,8 @@ i.MX6ULL](https://www.digikey.com/product-detail/en/seeed-technology-co-ltd/1029
 | PWM                  | Yes, but no Elixir support      |
 | UART                 | ttymxc0                         |
 | Camera               | None                            |
-| Ethernet             | Yes                             |
-| WiFi                 | Other requires USB WiFi dongle/driver |
+| Ethernet             | Two 100 Mbps (eth0 and eth1)    |
+| WiFi                 | Requires USB WiFi dongle/driver |
 | RTC                  | Yes w/ battery                  |
 | HW Watchdog          | i.MX6 watchdog enabled on boot. Be sure to enable `heart` in your vm.args or the device will reboot |
 
