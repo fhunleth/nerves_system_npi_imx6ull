@@ -1,5 +1,14 @@
 # Changelog
 
+## v0.2.0
+
+This updates the system to the `nerves_system_br 1.14.x` series and updates the
+toolchain to use gcc 10.
+
+* Updated dependencies
+  * [nerves_system_br: bump to 1.14.4](https://github.com/nerves-project/nerves_system_br/releases/tag/v1.14.4)
+  * [Erlang/OTP 23.2.4](https://erlang.org/download/OTP-23.2.4.README)
+
 ## v0.1.1
 
 * Updated dependencies
