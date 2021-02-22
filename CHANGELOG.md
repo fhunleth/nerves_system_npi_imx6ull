@@ -1,5 +1,12 @@
 # Changelog
 
+## v0.2.1
+
+* Improvements:
+  * Load device tree overlays for I2C, SPI and UART so that the "Raspberry Pi"
+    GPIO headers work more like the Raspberry Pi by default
+  * Synchronize with official systems
+
 ## v0.2.0
 
 This updates the system to the `nerves_system_br 1.14.x` series and updates the
