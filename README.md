@@ -83,6 +83,21 @@ config :vintage_net,
   ]
 ```
 
+The USB C connector provides a virtual Ethernet connection making it possible to
+both power and connect to the board using one cable. This is enabled in
+`:vintage_net` by adding a `"usb0"` entry to the network config:
+
+```elixir
+config :vintage_net,
+  config: [
+    {"usb0", %{type: VintageNetDirect}}
+  ]
+```
+
+You can combine the two configs and have three network interfaces or add a USB
+WiFi dongle for a fourth one. If adding a WiFi dongle, though, you'll need to
+enable the kernel drivers and add the firmware for it to a custom image.
+
 ## Linux and U-Boot versions
 
 The NPi i.MX6ULL vary by kernel version and patch set. Nerves tracks those
