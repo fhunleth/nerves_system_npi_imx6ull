@@ -26,11 +26,11 @@ update_kernel_patch() {
 
   case $KERNEL_VERSION in
       5*)
-          RCN_PATCH_URL=http://rcn-ee.net/deb/bullseye-armhf/v$PATCH_VERSION/$ORIGINAL_DIFF_XZ
+          RCN_PATCH_URL=https://rcn-ee.net/deb/bookworm-armhf/v$PATCH_VERSION/$ORIGINAL_DIFF_XZ
           KERNEL_URL=https://www.kernel.org/pub/linux/kernel/v5.x/$KERNEL_TARBALL
           ;;
       4*)
-          RCN_PATCH_URL=http://rcn-ee.net/deb/bullseye-armhf/v$PATCH_VERSION/$ORIGINAL_DIFF_XZ
+          RCN_PATCH_URL=https://rcn-ee.net/deb/bullseye-armhf/v$PATCH_VERSION/$ORIGINAL_DIFF_XZ
           KERNEL_URL=https://www.kernel.org/pub/linux/kernel/v4.x/$KERNEL_TARBALL
           ;;
       *)
@@ -74,7 +74,6 @@ update_kernel_patch() {
   return 0
 }
 
-# 10/21/2020 - RCN only has Seeed support in 4.19.x kernels
-update_kernel_patch 4.19.142-armv7-x56 4.19.142 0001-rcn-linux-4.19.142-armv7-x56.patch
+update_kernel_patch 5.10.59-armv7-x53 5.10.59 0001-rcn-linux-5.10.59-armv7-x53.patch
 
 echo "Updated patches. Now rebuild the linux kernel."

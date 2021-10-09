@@ -16,7 +16,7 @@ i.MX6ULL](https://www.digikey.com/product-detail/en/seeed-technology-co-ltd/1029
 | CPU                  | 800 MHz ARM Cortex-A7           |
 | Memory               | 512 MB DRAM                     |
 | Storage              | 8 GB eMMC Flash and MicroSD     |
-| Linux kernel         | 4.19 w/ RCN patches             |
+| Linux kernel         | 5.10 w/ RCN patches             |
 | IEx terminal         | UART `ttymxc0`                  |
 | GPIO, I2C, SPI       | Yes - [Elixir Circuits](https://github.com/elixir-circuits) |
 | Display              | Yes, but not supported yet      |
@@ -29,7 +29,7 @@ i.MX6ULL](https://www.digikey.com/product-detail/en/seeed-technology-co-ltd/1029
 | RTC                  | Yes w/ battery                  |
 | HW Watchdog          | i.MX6 watchdog enabled on boot. Be sure to enable `heart` in your vm.args or the device will reboot |
 
-WARNING: 32 GB and larger MicroSD cards don't seem to work!
+WARNING: 32 GB and larger MicroSD cards don't work!
 
 ## Using
 
