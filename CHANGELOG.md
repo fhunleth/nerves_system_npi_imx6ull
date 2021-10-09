@@ -1,5 +1,15 @@
 # Changelog
 
+## v0.5.1
+
+This fixes a regression that happened when the toolchain was updated to require
+Linux kernel headers newer than the kernel used in this project. Rather than
+holding the kernel version back, I updated it to Linux 5.10. This is beyond what
+Seeed supports (4.19), but it's 2021 and Linux 5.10 appears to work well.
+
+* Updated dependencies
+  * Linux 5.10.59
+
 ## v0.5.0
 
 This release updates to Buildroot 2021.08 and OTP 24.1. If you have made a
