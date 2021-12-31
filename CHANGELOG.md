@@ -12,7 +12,7 @@ follows:
    releases, and Linux kernel updates. They're also made to fix bugs and add
    features to the build infrastructure.
 
-## v0.6.0
+## v0.6.1
 
 This release updates to Buildroot 2021.11 and OTP 24.2. If you have made a
 custom system, please review the `nerves_system_br` [release
@@ -31,6 +31,10 @@ notes](https://github.com/nerves-project/nerves_system_br/blob/v1.18.2/CHANGELOG
     the future. This update is in the `nerves_defconfig`.
   * Use new build ORB on CircleCI. This ORB will shorten build times to fit in
     CircleCI's new free tier limits. Please update if building your own systems.
+
+## v0.6.0
+
+Use v0.6.1 instead.
 
 ## v0.5.4
 
