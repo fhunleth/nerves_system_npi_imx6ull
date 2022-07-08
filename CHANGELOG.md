@@ -12,6 +12,11 @@ follows:
    releases, and Linux kernel updates. They're also made to fix bugs and add
    features to the build infrastructure.
 
+## v0.8.1
+
+* Changes
+  * Relax `:nerves` dependency to support Nerves v1.8.0
+
 ## v0.8.0
 
 This release updates to Buildroot 2022.05 and uses GCC 11.3 (from GCC 10.3).
