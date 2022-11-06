@@ -12,11 +12,16 @@ follows:
    releases, and Linux kernel updates. They're also made to fix bugs and add
    features to the build infrastructure.
 
+## v0.9.1
+
+* Updated dependencies
+  * [nerves_system_br v1.21.2](https://github.com/nerves-project/nerves_system_br/releases/tag/v1.21.2)
+  * [Erlang/OTP 25.1.2](https://erlang.org/download/OTP-25.1.2.README)
+
 ## v0.9.0
 
 * Changes
   * Support aarch64 Linux builds
-  * Add libdtc to support runtime loading of device tree overlays
 
 * Updated dependencies
   * [nerves_system_br v1.21.1](https://github.com/nerves-project/nerves_system_br/releases/tag/v1.21.1)
