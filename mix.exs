@@ -95,7 +95,17 @@ defmodule NervesSystemNPiIMX6ULL.MixProject do
     [
       files: package_files(),
       licenses: ["Apache-2.0"],
-      links: %{"GitHub" => @source_url}
+      links: %{"GitHub" => @source_url},
+      extra: %{
+        processor: "NXP i.MX6ULL",
+        dram_size: "512 MB",
+        emmc_size: "8 GB",
+        micro_sd_cnt: 1,
+        ethernet_cnt: 2,
+        wifi_cnt: 0,
+        cellular_cnt: 0,
+        rtc: true
+      }
     ]
   end
 
