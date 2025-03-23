@@ -1,5 +1,9 @@
 # NPi i.MX6ULL Support
 
+[![Hex version](https://img.shields.io/hexpm/v/nerves_system_npi_imx6ull.svg "Hex version")](https://hex.pm/packages/nerves_system_npi_imx6ull)
+[![CI](https://github.com/fhunleth/nerves_system_npi_imx6ull/actions/workflows/ci.yml/badge.svg)](https://github.com/fhunleth/nerves_system_npi_imx6ull/actions/workflows/ci.yml)
+[![REUSE status](https://api.reuse.software/badge/github.com/fhunleth/nerves_system_npi_imx6ull)](https://api.reuse.software/info/github.com/fhunleth/nerves_system_npi_imx6ull)
+
 *This is a work in progress. It currently boots off MicroSD cards and not eMMC*
 
 [![CircleCI](https://circleci.com/gh/fhunleth/nerves_system_npi_imx6ull.svg?style=svg)](https://circleci.com/gh/fhunleth/nerves_system_npi_imx6ull)
@@ -7,9 +11,6 @@
 
 This is the base Nerves System configuration for the [NPi
 i.MX6ULL](https://www.digikey.com/product-detail/en/seeed-technology-co-ltd/102991306/1597-102991306-ND/10492211).
-
-![NPi i.MX6ULL](assets/images/npi_imx6ull.png)
-<br><sup>[Image credit](#digikey)</sup>
 
 | Feature              | Description                     |
 | -------------------- | ------------------------------- |
@@ -106,6 +107,4 @@ maintained by Robert Nelson at
 
 Nerves also integrates the NPi i.MX6ULL's U-boot patches but modifies them to
 support the Nerves U-Boot environment variables.
-
-[Image credit](#digikey): This image is from [Digikey](http://digikey.com/).
 

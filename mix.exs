@@ -10,7 +10,7 @@ defmodule NervesSystemNPiIMX6ULL.MixProject do
 
   def project do
     [
-      app: @app,
+      app: :nerves_system_npi_imx6ull,
       version: @version,
       elixir: "~> 1.9",
       compilers: Mix.compilers() ++ [:nerves_package],
@@ -84,7 +84,6 @@ defmodule NervesSystemNPiIMX6ULL.MixProject do
     [
       extras: ["README.md", "CHANGELOG.md"],
       main: "readme",
-      assets: %{"assets" => "assets"},
       source_ref: "v#{@version}",
       source_url: @source_url,
       skip_undefined_reference_warnings_on: ["CHANGELOG.md"]
@@ -94,8 +93,12 @@ defmodule NervesSystemNPiIMX6ULL.MixProject do
   defp package do
     [
       files: package_files(),
-      licenses: ["Apache-2.0"],
-      links: %{"GitHub" => @source_url}
+      licenses: ["GPL-2.0-only", "GPL-2.0-or-later"],
+      links: %{
+        "GitHub" => @source_url,
+        "REUSE Compliance" =>
+          "https://api.reuse.software/info/github.com/fhunleth/nerves_system_npi_imx6ull"
+      }
     ]
   end
 
@@ -108,12 +111,13 @@ defmodule NervesSystemNPiIMX6ULL.MixProject do
       "CHANGELOG.md",
       "fwup-revert.conf",
       "fwup.conf",
-      "LICENSE",
+      "LICENSES/*",
       "mix.exs",
       "nerves_defconfig",
       "post-build.sh",
       "post-createfs.sh",
       "README.md",
+      "REUSE.toml",
       "VERSION"
     ]
   end
