@@ -1,3 +1,5 @@
+
+
 # NPi i.MX6ULL Support
 
 [![Hex version](https://img.shields.io/hexpm/v/nerves_system_npi_imx6ull.svg "Hex version")](https://hex.pm/packages/nerves_system_npi_imx6ull)
@@ -61,7 +63,7 @@ enabled. See
 [#2](https://github.com/fhunleth/nerves_system_npi_imx6ull/issues/2).
 
 If you would like console access via the LCD, you will need to enable LCD
-support in the Linux kernel, and change `erlinit.conf` to output to `tty1`.
+support in the Linux kernel, and change `erlinit.config` to output to `tty1`.
 
 ## Networking
 
@@ -107,4 +109,3 @@ maintained by Robert Nelson at
 
 Nerves also integrates the NPi i.MX6ULL's U-boot patches but modifies them to
 support the Nerves U-Boot environment variables.
-
